@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease;
+    background: linear-gradient(135deg, #63380a, #441111);
+    color: var(--text-color);
+}
+
+/* Horizontal Background Gradient */
+.horizontal-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33vh; /* One-third of the screen coverage */
+    background: linear-gradient(90deg, #993434, #581b1b); /* Brown gradient */
+    z-index: -1; /* Send to the back */
+}
+
+/* Background Image Styles */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)
+    ), 
+    url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fG1vdW50YWlufGVufDB8fHx8MTYwOTAyNjkxOQ&ixlib=rb-1.2.1&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.app {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+/* Styling the Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(104, 26, 26);
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#theme-toggle {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Input field for new todos */
+#new-todo {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Todo List Styles */
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo-item.completed {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Checkboxes */
+.todo-checkbox {
+    margin-right: 10px; /* Spacing between checkbox and label */
+    accent-color: #622121; 
+}
+
+/* Filter Buttons */
+.filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filters button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    background: none;
+    border: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.filters button:hover {
+    border-color: #621b1b;
+    color: #601a1a;
+}
+
+/* CSS Variables for Theme */
+:root {
+    --bg-color: #6f2525;
+    --text-color: #000000;
+    --input-bg-color: #ffffff;
+}
+
+body.dark-mode {
+    --bg-color: #1c1717;
+    --text-color: #ffffff;
+    --input-bg-color: #444;
+}
+
+body.dark-mode .app {
+    background-color: rgba(16, 14, 14, 0.9);
+}
+
+/* Progress Bar Styles */
+#progress-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#progress-bar {
+    height: 10px;
+    width: 0;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: fall 2s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
